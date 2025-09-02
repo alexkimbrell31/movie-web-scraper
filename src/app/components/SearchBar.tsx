@@ -38,7 +38,6 @@ const SearchBar = () => {
 
         const response = await fetch(url);
         const json = await response.json();
-        // console.log('response: ', json);
 
         const movieStreamList = json.filter((streamingService: StreamingDetails) => 
             streamingService.region === 'US' 

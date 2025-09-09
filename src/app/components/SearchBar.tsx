@@ -3,6 +3,7 @@ import { FetchCsvData } from '../sideEffects/MovieCSVFile'
 import styles from '../styles/SearchBar.module.css'
 import { RowData, StreamingDetails } from '../Types';
 import { AlexMovieList } from '../MyMovieList';
+import { inconspicuousString } from '@/constants';
 
 const SearchBar = () => {
     const [data, setData] = useState<RowData[]>([])
@@ -32,9 +33,8 @@ const SearchBar = () => {
         // console.log('onGetMovieStreamingServices Movie: ', movie)
         
         //Now make the API call here:
-        const apiKey = 'cSdoIOJlBbg5HvC77v2ntvW3nOW4dDMjG3fO7UKU';
         const titleId = movie['Watchmode ID']
-        const url = `https://api.watchmode.com/v1/title/${titleId}/sources/?apiKey=${apiKey}`;
+        const url = `https://api.watchmode.com/v1/title/${titleId}/sources/?apiKey=${inconspicuousString}`;
 
         const response = await fetch(url);
         const json = await response.json();

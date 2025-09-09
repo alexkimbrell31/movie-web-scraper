@@ -30,12 +30,12 @@ export const FetchCsvData = async ({
         Papa.parse(csvText, {
             header: true, // Assuming your CSV has headers
             skipEmptyLines: true,
-            complete: (results: any) => {
+            complete: (results: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
                 setData(results.data);
                 setIsLoadingCSV(false)
                 // console.log('length: ', results.data.length)
             },
-            error: (err: any) => {
+            error: (err: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
                 console.log('Error: ', err)
             }
         });

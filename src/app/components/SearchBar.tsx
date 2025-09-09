@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { FetchCsvData } from '../sideEffects/MovieCSVFile'
 import styles from '../styles/SearchBar.module.css'
 import { RowData, StreamingDetails } from '../Types';
-import { AlexMovieList } from '../MyMovieList';
+// import { AlexMovieList } from '../MyMovieList';
 import { inconspicuousString } from '@/constants';
 
 const SearchBar = () => {
@@ -11,7 +11,7 @@ const SearchBar = () => {
     const [isLoadingCSV, setIsLoadingCSV] = useState(false)
     const [isLoadingSearch, setIsLoadingSearch] = useState(false)
     const [userSearch, setUserSearch] = useState('')
-    const [streamingList, setStreamingList] = useState<StreamingDetails[]>([])
+    // const [streamingList, setStreamingList] = useState<StreamingDetails[]>([])
 
     useEffect(() => {
         FetchCsvData({setData, setIsLoadingCSV}) // Grabs csv file with entire list of movies
@@ -90,12 +90,15 @@ const SearchBar = () => {
                     <div>
                         <p>Length: {filteredRows.length}</p>
                         {filteredRows.map((row, index) => (
-                            <div style={{
-                                flexDirection: 'row',
-                                display: 'flex',
-                            }}>
+                            <div
+                                key={index}
+                                style={{
+                                    flexDirection: 'row',
+                                    display: 'flex',
+                                }}
+                            >
                                 {/* Add Table here [Name, Year, IMDB ID, and Select Movie Button] */}
-                                <p key={index}>
+                                <p>
                                     {row['Title']} {(row.Year)} - IMDB ID: {row['IMDB ID']}
                                 </p>
                                 <button

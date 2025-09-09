@@ -1,4 +1,4 @@
-import MovieTable from './MovieTable';
+// import MovieTable from './MovieTable';
 
 export const Header = () => {
   return (

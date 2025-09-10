@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { FetchCsvData } from '../sideEffects/MovieCSVFile'
 import styles from '../styles/SearchBar.module.css'
 import { RowData, StreamingDetails } from '../Types';
-import { AlexMovieList } from '../MyMovieList';
+// import { AlexMovieList } from '../MyMovieList';
 import { inconspicuousString } from '@/constants';
 
 const SearchBar = () => {

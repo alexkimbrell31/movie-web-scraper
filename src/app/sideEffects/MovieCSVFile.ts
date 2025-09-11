@@ -3,7 +3,7 @@ import 'react';
 import { Dispatch, SetStateAction } from 'react';
 import { RowData } from '../Types';
 
-const CSV_FILE_PATH = '/title_id_map.csv' // length:  934561
+const CSV_FILE_PATH = '/movie-web-scraper/title_id_map.csv' // length:  934561
 
 type FetchCsvDataProps = {
     setData: Dispatch<SetStateAction<RowData[]>>,
@@ -21,6 +21,7 @@ export const FetchCsvData = async ({
 
         if (!response.ok) {
             console.log('Throwing error')
+            console.log('response: ', response)
             throw new Error(`HTTP error! status: ${response.status}`)
         }
 

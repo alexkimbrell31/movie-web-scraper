@@ -1,0 +1,17 @@
+.mainContainer {
+    padding: 20px;
+    background-color: rgb(175, 249, 217);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainBodyContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.alexListContainer {
+    padding: 10px;
+}

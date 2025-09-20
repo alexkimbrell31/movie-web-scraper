@@ -1,13 +1,13 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { FetchCsvData } from '../sideEffects/MovieCSVFile'
 import styles from '../styles/SearchBar.module.css'
-import { RowData, StreamingDetails } from '../Types';
+import { Movie, StreamingDetails } from '../Types';
 // import { AlexMovieList } from '../MyMovieList';
 import { inconspicuousString } from '@/constants';
 
 const SearchBar = () => {
-    const [data, setData] = useState<RowData[]>([])
-    const [filteredRows, setFilteredRows] = useState<RowData[]>([])
+    const [data, setData] = useState<Movie[]>([])
+    const [filteredRows, setFilteredRows] = useState<Movie[]>([])
     const [isLoadingCSV, setIsLoadingCSV] = useState(false)
     const [isLoadingSearch, setIsLoadingSearch] = useState(false)
     const [userSearch, setUserSearch] = useState('')
@@ -29,7 +29,7 @@ const SearchBar = () => {
         console.log('filteredRows: ', searchResults)
     }
 
-    const onGetMovieStreamingServices = async (movie: RowData) => {
+    const onGetMovieStreamingServices = async (movie: Movie) => {
         // console.log('onGetMovieStreamingServices Movie: ', movie)
         
         //Now make the API call here:

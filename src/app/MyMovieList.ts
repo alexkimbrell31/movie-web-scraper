@@ -1,4 +1,4 @@
-import { RowData } from "./Types";
+import { Movie } from "./Types";
 
 // Probs make sense to just generate this list until we actually
 // start using a database to store movies. Until then, I'd just 
@@ -6,14 +6,12 @@ import { RowData } from "./Types";
 
 // Other movies to add here:
 // Scott Pilgrim vs The World
-// 500 Days of Summer
 // Cashback
 // The Wickerman
 // Goodfellas
 // Citizen Kane
 // Slenderman
 // White Men Can't Jump
-// Saw
 // Platoon
 // The King of Comedy
 // The Sixth Sense
@@ -40,14 +38,15 @@ import { RowData } from "./Types";
 // October Sky
 // Cast Away
 
-export const AlexMovieList: RowData[] = [
+export const AlexMovieList: Movie[] = [
     {
         "Watchmode ID": "175331",
         "IMDB ID": "tt4575576",
         "TMDB ID": "420814",
         "TMDB Type": "movie",
         Title: "Christopher Robin",
-        Year: "2018"
+        Year: "2018",
+
     },
     {
         "Watchmode ID": "1400461",
@@ -64,5 +63,21 @@ export const AlexMovieList: RowData[] = [
         "TMDB Type": "movie",
         Title: "Who Framed Roger Rabbit",
         Year: "1988",
+    },
+    {
+        "Watchmode ID": "14126",
+        "IMDB ID": "tt1022603",
+        "TMDB ID": "19913",
+        "TMDB Type": "movie",
+        Title: "500 Days of Summer",
+        Year: "2009"
+    },
+    {
+        "Watchmode ID": "1334913",
+        "IMDB ID": "tt0387564",
+        "TMDB ID": "176",
+        "TMDB Type": "movie",
+        Title: "Saw",
+        Year: "2004"
     },
 ]

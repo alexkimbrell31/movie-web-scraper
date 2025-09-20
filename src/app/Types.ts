@@ -1,10 +1,23 @@
-export type RowData = {
+export type Movie = {
     ['Watchmode ID']: string
     ['IMDB ID']: string
     ['TMDB ID']: string
     ['TMDB Type']: string
     Title: string
     Year: string
+    onAmazonPrime?: boolean
+    onAppleTvPlus?: boolean
+    onDisneyPlus?: boolean
+    onHBOMax?: boolean
+    onHulu?: boolean
+    onNetflix?: boolean
+    onParamountPlus?: boolean
+    onPeacock?: boolean
+    onTubi?: boolean
+    onVudu?: boolean
+    onHoopla?: boolean
+    onPlex?: boolean
+    onOther?: boolean
 }
 
 export const API_ROOT_URL = "https://api.watchmode.com/v1/"
@@ -22,4 +35,9 @@ export type StreamingDetails = {
     ['souce_id']: number | null
     type: 'free' | 'sub' | 'rent' | 'buy' | null
     ['web_url']: string | null
+}
+
+export type StreamingService = {
+    Name: string
+    WatchmodeName: string
 }

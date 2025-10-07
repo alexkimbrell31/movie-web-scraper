@@ -1,12 +1,12 @@
 import Papa from 'papaparse';
 import 'react';
 import { Dispatch, SetStateAction } from 'react';
-import { RowData } from '../Types';
+import { Movie } from '../Types';
 
 const CSV_FILE_PATH = '/movie-web-scraper/title_id_map.csv' // length:  934561
 
 type FetchCsvDataProps = {
-    setData: Dispatch<SetStateAction<RowData[]>>,
+    setData: Dispatch<SetStateAction<Movie[]>>,
     setIsLoadingCSV: Dispatch<SetStateAction<boolean>>
 }
 

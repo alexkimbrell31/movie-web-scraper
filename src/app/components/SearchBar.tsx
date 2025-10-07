@@ -2,8 +2,9 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { FetchCsvData } from '../sideEffects/MovieCSVFile'
 import styles from '../styles/SearchBar.module.css'
-import { Movie, StreamingDetails } from '../Types';
-import { inconspicuousString } from '@/constants';
+import { Movie } from '../Types';
+// import { Movie, StreamingDetails } from '../Types';
+// import { inconspicuousString } from '@/constants';
 
 const SearchBar = () => {
     const [data, setData] = useState<Movie[]>([])
@@ -50,7 +51,7 @@ const SearchBar = () => {
 
         // 3. Format it to look like the JavaScript object literal you want
         //    (Remove surrounding braces and quote keys that don't need them)
-        let formattedString = jsonString
+        const formattedString = jsonString
             .replace(/^{\n/, '')   // Remove opening brace + newline
             .replace(/\n}$/, '')  // Remove newline + closing brace
             // Replace double quotes around Title and Year keys with nothing
@@ -68,21 +69,21 @@ const SearchBar = () => {
     }
     
     // Keeping the original function, but note it's not called in the new workflow
-    const onGetMovieStreamingServices = async (movie: Movie) => {
-        // ... original API fetching logic ...
-        // (You can safely remove this if it's no longer the intended action on 'Select')
-        const titleId = movie['Watchmode ID']
-        const url = `https://api.watchmode.com/v1/title/${titleId}/sources/?apiKey=${inconspicuousString}`;
+    // const onGetMovieStreamingServices = async (movie: Movie) => {
+    //     // ... original API fetching logic ...
+    //     // (You can safely remove this if it's no longer the intended action on 'Select')
+    //     const titleId = movie['Watchmode ID']
+    //     const url = `https://api.watchmode.com/v1/title/${titleId}/sources/?apiKey=${inconspicuousString}`;
 
-        const response = await fetch(url);
-        const json = await response.json();
+    //     const response = await fetch(url);
+    //     const json = await response.json();
 
-        const movieStreamList = json.filter((streamingService: StreamingDetails) => 
-            streamingService.region === 'US' 
-            && (streamingService.type === 'sub' || streamingService.type === 'free'))
-        console.log(movie.Title)
-        console.log(movieStreamList)
-    }
+    //     const movieStreamList = json.filter((streamingService: StreamingDetails) => 
+    //         streamingService.region === 'US' 
+    //         && (streamingService.type === 'sub' || streamingService.type === 'free'))
+    //     console.log(movie.Title)
+    //     console.log(movieStreamList)
+    // }
     
     
     return (

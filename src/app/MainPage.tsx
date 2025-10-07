@@ -1,12 +1,10 @@
 'use client'
 import Header from './components/Header'
-import SearchBar from "./components/SearchBar"
 import styles from './styles/MainPage.module.css'
 import { AlexMovieList } from './MyMovieList'
 import { Movie, StreamingDetails } from './Types'
-import { inconspicuousString, STREAMING_SERVICES } from '@/constants'
+import { inconspicuousString } from '@/constants'
 import { useEffect, useState } from 'react'
-import Stream from 'stream'
 
 export const MainPage = () => {
   const [movieWithStreamingData, setMovieWithStreamingData] = useState<Movie[]>([])
@@ -24,6 +22,8 @@ export const MainPage = () => {
 
     return movieStreamList
   }
+
+  // NEED TO FIX DEPLOY FAILURE. Looked like mostly small stuff
 
   useEffect(() => {
     // 1. Define an async function to execute the fetches
@@ -89,7 +89,7 @@ export const MainPage = () => {
                     <td>
                       <div style={{ display: 'flex', flexDirection: 'row'}}>
                         {movie.streamingServices?.map((streamingService, index) => (
-                          <div>
+                          <div key={index}>
                             {streamingService.name}
                           </div>
                         ))}

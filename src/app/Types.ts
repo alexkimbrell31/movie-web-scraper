@@ -5,19 +5,7 @@ export type Movie = {
     ['TMDB Type']: string
     Title: string
     Year: string
-    onAmazonPrime?: boolean
-    onAppleTvPlus?: boolean
-    onDisneyPlus?: boolean
-    onHBOMax?: boolean
-    onHulu?: boolean
-    onNetflix?: boolean
-    onParamountPlus?: boolean
-    onPeacock?: boolean
-    onTubi?: boolean
-    onVudu?: boolean
-    onHoopla?: boolean
-    onPlex?: boolean
-    onOther?: boolean
+    streamingServices?: StreamingDetails[]
 }
 
 export const API_ROOT_URL = "https://api.watchmode.com/v1/"
